@@ -17,7 +17,7 @@ setuptools.setup(
     long_description=get_long_desc(),
     long_description_content_type="text/x-rst",
     url="https://github.com/d2gex/pubsub-zmq",
-    packages=['producer_sink'],
+    packages=['pubsub_zmq'],
     python_requires='>=3.6',
     install_requires=['pyzmq>=18.1.0'],
     tests_require=['pytest>=5.0.1', 'pymulproc>=0.1.1'],
