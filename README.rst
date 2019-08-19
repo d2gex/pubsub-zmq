@@ -2,7 +2,7 @@
 ``PubSub-ZMQ``: A tiny library for PUB-SUB asynchronous communication
 ===================================================================================
 
-A tiny library that abstract the PUB-SUB asynchronous communication pattern by using PUB and SUB socket types
+A small library that abstracts the PUB-SUB asynchronous communication pattern by using PUB and SUB socket types
 from ZeroMQ.
 
 .. image:: https://travis-ci.com/d2gex/pubsub-zmq.svg?branch=master
@@ -18,7 +18,7 @@ a **"fire and forget"** strategy.
 
 Install and Run
 ===============
-Producer-Sink-ZMQ is not available on PyPI yet, so you need to install it with pip providing a GitHub path as
+Pubsub-ZMQ is not available on PyPI yet, so you need to install it with pip providing a GitHub path as
 follows::
 
     $ pip install git+https://github.com/d2gex/pubsub-zmq.git@0.1.0#egg=pubsub-zmq
@@ -47,10 +47,10 @@ where:
     subscriber = subscriber.Subscriber(topics=['descending_sequence'], url=tcp://127.0.0.1:5556, identity='Subscriber Name')
     loops = 10
     while loops:
-        data = producer.run()
+        data = subscriber.run()
         print(data)
         loops -= 1
 
 where:
 
-1.  **topics**: is a list of topics to which the Subscriber is subscribed to.
+1.  **topics**: is a list of topics to which the Subscriber is subscribed.
