@@ -21,7 +21,7 @@ Install and Run
 Pubsub-ZMQ is not available on PyPI yet, so you need to install it with pip providing a GitHub path as
 follows::
 
-    $ pip install git+https://github.com/d2gex/pubsub-zmq.git@0.1.0#egg=pubsub-zmq
+    $ pip install git+https://github.com/d2gex/pubsub-zmq.git@0.1.1#egg=pubsub-zmq
 
 
 .. code-block:: python

@@ -8,12 +8,11 @@ class SubPeer(ipeer.IPeer):
     '''This class is not usually instantiated and only extended by Sub-type ends
     '''
 
-    def __init__(self, topics, timeout=10, context=None, *args, **kwargs):
+    def __init__(self, *args, topics, timeout=10, **kwargs):
         super().__init__(*args, **kwargs)
         self.timeout = timeout
         self.topics = topics
         self.socket_type = zmq.SUB
-        self.context = context or zmq.Context()
         self.socket = self.context.socket(self.socket_type)
         self.socket.setsockopt(zmq.LINGER, self.linger)
         for topic in self.topics if isinstance(self.topics, list) else [self.topics]:

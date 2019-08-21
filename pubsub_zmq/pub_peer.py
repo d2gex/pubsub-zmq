@@ -8,13 +8,12 @@ class PubPeer(ipeer.IPeer):
     '''This class is not usually instantiated and only extended by Sub-type ends
     '''
 
-    def __init__(self, timeout=1, num_attempts=5, context=None, *args, **kwargs):
+    def __init__(self, *args, timeout=1, num_attempts=5, **kwargs):
         super().__init__(*args, **kwargs)
         self.timeout = timeout
         self.num_attempts = num_attempts
         self.sndhwm = kwargs.get('sndhwm', 1000)  # 1000 is the default value according to Zeromq
         self.socket_type = zmq.PUB
-        self.context = context or zmq.Context()
         self.socket = self.context.socket(self.socket_type)
         self.socket.setsockopt(zmq.LINGER, self.linger)
         self.socket.setsockopt(zmq.SNDHWM, self.sndhwm)
